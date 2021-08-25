@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "this is a simple method to encrypt/decrypt a file"
+echo -n "please choose which file u want to enc/dec"
+read pass
+if [ $pass = enc ];
+then
+        echo -n "Please enter the file you want to encrypt"
+        read file;
+        gpg -c $file
+        echo "The file has been encrypted"
+else
+        echo -n "Please enter the file you want to decrypt"
+        read file2;
+        gpg -d $file2
+        echo "The file has been decrypted"
+fi
